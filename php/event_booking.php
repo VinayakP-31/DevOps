@@ -61,7 +61,7 @@ $result=mysqli_query($con,$sql);
           <i class="fas fa-times close-btn"></i>
         </div>
         <div class="menu">
-          <a href="Home.html">Logout</a>
+        <a href="logout.php">Logout</a>
         </div>
         <div class="btn">
           <i class="fas fa-bars menu-btn"></i>

@@ -43,7 +43,7 @@ if(isset($_POST["name"])){
         </div>
         <div class="menu">
           <a href="book_stay.html"style="float: left;">Book a stay</a>
-          <a href="Home.html">Logout</a>
+          <a href="logout.php">Logout</a>
         </div>
         <div class="btn">
           <i class="fas fa-bars menu-btn"></i>
