@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v2
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.AzureAppService_ContainerUsername_d5027c8c6c8e42f0a8559258cf43deaf }}
-        password: ${{ secrets.AzureAppService_ContainerPassword_c49a89bc220f40a3b159963ac8226a42 }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_577572ebaeb7473581c21dd84d6bc679 }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_7c570fd8474045d99a41fa65ea4c26f7 }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_d5027c8c6c8e42f0a8559258cf43deaf }}/travvorahms:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_577572ebaeb7473581c21dd84d6bc679 }}/travvorahms:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'Travvora'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_55e5c3a2ff7e4b3680875422b517463c }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_d5027c8c6c8e42f0a8559258cf43deaf }}/travvorahms:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_dc2d5735dbd445b9af24374f312683f1 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_577572ebaeb7473581c21dd84d6bc679 }}/travvorahms:${{ github.sha }}'
