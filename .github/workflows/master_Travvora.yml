@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_577572ebaeb7473581c21dd84d6bc679 }}/travvorahms:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./php/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
