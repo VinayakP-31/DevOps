@@ -1,8 +1,8 @@
 <?php
 session_start();
-$server="localhost";
-$username="root";
-$password="";
+$server="db";
+$username="Travvora";
+$password="trav123";
 $db="hotel";
 
 $con=mysqli_connect($server,$username,$password,$db);
