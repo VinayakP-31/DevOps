@@ -40,7 +40,7 @@ CREATE TABLE `contactus` (
 --
 
 INSERT INTO `contactus` (`id`, `name`, `email`, `hotel`, `purpose`) VALUES
-(1, 'Vinayak', 'vinayak@gmail.com', 'tajresortgoa@gmail.com', 'Fantastic and excellent service');
+(1, 'Vinayak', 'vinayak@gmail.com', 'tajexotica@gmail.com', 'Fantastic and excellent service');
 
 -- --------------------------------------------------------
 

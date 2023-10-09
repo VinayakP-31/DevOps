@@ -9,7 +9,7 @@ if(isset($_POST["name"])){
   $purpose=$_POST["pur"];
   $sql="INSERT INTO `contactus` VALUES ('$id','$name','$email','$hotel','$purpose');";
   if($con->query($sql)==true){
-    header("Location: user.php");
+    echo '<script type="text/javascript">alert("Success");window.location = "user.php";</script>';
   } else {
     echo "Error: $con->error";
   }
