@@ -33,6 +33,8 @@ if(mysqli_num_rows($result)===1){
     $_SESSION['uid']=$row['id'];
     header("Location: user.php");
   } else {
-    echo("Error");
+    echo '<script type="text/javascript">alert("Failed");</script>';
   }
+} else {
+  echo '<script type="text/javascript">alert("Invalid Email and Password");window.location = "Home.html";</script>';
 }

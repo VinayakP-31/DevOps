@@ -20,6 +20,7 @@ session_start();
       <i class="fas fa-times close-btn"></i>
     </div>
     <div class="menu">
+      <a href="contactm.php" style="float: left;">Feedback</a>
       <a href="logout.php">Logout</a>
     </div>
     <div class="btn">

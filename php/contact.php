@@ -76,7 +76,7 @@ if(isset($_POST["name"])){
                   <label for="email" class="label">Hotel Email</label>
                   <datalist id="hotels">
                     <option value="oberoibangalore@gmail.com">
-                    <option value="tajresortgoa@gmail.com">
+                    <option value="tajexotica@gmail.com">
                     <option value="jaimahaljaipur@gmail.com">
                     
                   </datalist>
