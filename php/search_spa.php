@@ -11,7 +11,7 @@ if(!$con){
   die("connection failed".mysqli_connect_error());
 }
 
-$sql="SELECT spa.name,spa.email,spa.phone,spa.gender,spa.hotel,spa.date,spa.time FROM spa,manager WHERE spa.hotel=manager.hotel AND manager.hotel='".$_SESSION['hotel']."' AND spa.name='".$search."' OR spa.date='".$search."'";
+$sql="SELECT spa.name,spa.email,spa.phone,spa.gender,spa.hotel,spa.date,spa.time FROM spa,manager WHERE spa.hotel=manager.hotel AND manager.hotel='".$_SESSION['hotel']."' AND spa.name='".$search."' ";
 $result=mysqli_query($con,$sql);
 ?>
 <!DOCTYPE html>
@@ -92,6 +92,7 @@ $result=mysqli_query($con,$sql);
       <th>Time</th>
     </tr>
     <?php
+    if($result){
       while($rows=mysqli_fetch_assoc($result))
       {
     ?>
@@ -107,6 +108,9 @@ $result=mysqli_query($con,$sql);
     </tr>
     <?php
       }
+    } else {
+      echo '<script type="text/javascript">alert("Found no entries");</script>';
+    }
     ?>
     
   </table>

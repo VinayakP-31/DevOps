@@ -10,7 +10,7 @@ $search=$_GET['searchTerm'];
 if(!$con){
   die("connection failed".mysqli_connect_error());
 }
-$sql="SELECT events.name,events.email,events.phone,events.hotel,events.date,events.guest,events.purpose FROM events WHERE events.hotel like '%".$_SESSION['hotel']."%' AND name='".$search."' OR indate='".$search."'";
+$sql="SELECT events.name,events.email,events.phone,events.hotel,events.date,events.guest,events.purpose FROM events WHERE events.hotel like '%".$_SESSION['hotel']."%' AND name='".$search."' ";
 $result=mysqli_query($con,$sql);
 ?>
 <!DOCTYPE html>
@@ -91,6 +91,7 @@ $result=mysqli_query($con,$sql);
       <th>Purpose</th>
     </tr>
     <?php
+    if($result){
       while($rows=mysqli_fetch_assoc($result))
       {
     ?>
@@ -105,6 +106,9 @@ $result=mysqli_query($con,$sql);
 
     </tr>
     <?php
+      } 
+    }else {
+        echo '<script type="text/javascript">alert("Found no entries");</script>';
       }
     ?>
   </table>

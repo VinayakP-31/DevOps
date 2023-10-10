@@ -11,7 +11,7 @@ if(!$con){
   die("connection failed".mysqli_connect_error());
 }
 
-$sql="SELECT name,dest,indate,outdate,adults,children FROM rooms,manager WHERE dest=hotel AND hotel='".$_SESSION['hotel']."' AND name='".$search."' OR indate='".$search."'";
+$sql="SELECT name,dest,indate,outdate,adults,children FROM rooms,manager WHERE dest=hotel AND hotel='".$_SESSION['hotel']."' AND name='".$search."' ";
 $result=mysqli_query($con,$sql);
 ?>
 
@@ -92,6 +92,7 @@ $result=mysqli_query($con,$sql);
       <th>Children</th>
     </tr>
     <?php
+      if($result){
       while($rows=mysqli_fetch_assoc($result))
       {
     ?>
@@ -105,6 +106,9 @@ $result=mysqli_query($con,$sql);
     </tr>
     <?php
       }
+    } else {
+      echo '<script type="text/javascript">alert("Found no entries");</script>';
+    }
     ?>
   </table>
   <footer>

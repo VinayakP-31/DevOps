@@ -15,7 +15,7 @@ session_start();
 <body>
 
   <header>
-    <a href="manager.html" class="brand">Hotel</a>
+    <a href="manager.php" class="brand">Travvora</a>
     <div class="btn">
       <i class="fas fa-times close-btn"></i>
     </div>
