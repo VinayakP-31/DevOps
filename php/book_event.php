@@ -20,7 +20,7 @@ if(isset($_POST["name"])){
       if($con->query($sql)==true){
         echo '<script type="text/javascript">alert("Success");window.location = "user.php";</script>';
       } else {
-        echo "Error: $con->error";
+        echo '<script type="text/javascript">alert("Failed");window.location = "user.php";</script>';
       }
     }
     $con->close();
@@ -37,12 +37,12 @@ if(isset($_POST["name"])){
 </head>
 <body>
     <header>
-        <a href="user.html" class="brand">Travvora</a>
+        <a href="user.php" class="brand">Travvora</a>
         <div class="btn">
           <i class="fas fa-times close-btn"></i>
         </div>
         <div class="menu">
-          <a href="book_stay.html"style="float: left;">Book a stay</a>
+          <a href="book_stay.php"style="float: left;">Book a stay</a>
           <a href="logout.php">Logout</a>
         </div>
         <div class="btn">

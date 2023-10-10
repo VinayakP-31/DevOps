@@ -16,7 +16,7 @@ $sql="INSERT INTO `hotel`.`manager`(`hotel`,`email`,`password`) VALUES ('$name',
 if($con->query($sql)==true){
     header("Location: login_manager.html");
 } else {
-    echo "Error: $con->error";
+    echo '<script type="text/javascript">alert("Failed");window.location = "user.php";</script>';
 }
 
 $con->close();

@@ -15,7 +15,7 @@ session_start();
 <body onload="checkAlert()">
   
   <header>
-    <a href="user.html" class="brand">Travvora</a>
+    <a href="user.php" class="brand">Travvora</a>
     <div class="btn">
       <i class="fas fa-times close-btn"></i>
     </div>

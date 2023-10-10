@@ -21,7 +21,7 @@ if(isset($_POST["name"])){
         if($con->query($sql)==true){
             echo '<script type="text/javascript">alert("Success");window.location = "user.php";</script>';
         } else {
-            echo "Error: $con->error";
+            echo '<script type="text/javascript">alert("Failed");window.location = "user.php";</script>';
         }
     }
     $con->close();

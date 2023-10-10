@@ -58,12 +58,12 @@ $result=mysqli_query($con,$sql);
 </head>
 <body>
     <header>
-        <a href="manager.html" class="brand">Hotel</a>
+        <a href="manager.php" class="brand">Travvora</a>
         <div class="btn">
           <i class="fas fa-times close-btn"></i>
         </div>
         <div class="menu">
-          <a href="Home.html">Logout</a>
+          <a href="logout.php">Logout</a>
         </div>
         <div class="btn">
           <i class="fas fa-bars menu-btn"></i>
