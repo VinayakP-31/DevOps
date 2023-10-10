@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Oct 09, 2023 at 02:41 PM
+-- Generation Time: Oct 10, 2023 at 03:09 AM
 -- Server version: 8.1.0
 -- PHP Version: 8.2.8
 
@@ -40,7 +40,8 @@ CREATE TABLE `contactus` (
 --
 
 INSERT INTO `contactus` (`id`, `name`, `email`, `hotel`, `purpose`) VALUES
-(1, 'Vinayak', 'vinayak@gmail.com', 'tajexotica@gmail.com', 'Fantastic and excellent service');
+(1, 'Vinayak', 'vinayak@gmail.com', 'tajgoa@gmail.com', 'Fantastic! Enjoyed it!!'),
+(1, 'Vinayak', 'vinayak@gmail.com', 'tajexotica@gmail.com', 'Fantastic and enjoyed the service');
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,9 @@ CREATE TABLE `manager` (
 --
 
 INSERT INTO `manager` (`id`, `hotel`, `email`, `password`) VALUES
-(1, 'Taj Exotica Resort and Spa,Goa', 'tajexotica@gmail.com', 'tajgoa');
+(1, 'Taj Exotica Resort and Spa,Goa', 'tajexotica@gmail.com', 'tajgoa'),
+(2, 'Oberoi, Bangalore', 'oberoibangalore@gmail.com', 'oberoibangalore'),
+(3, 'Jai Mahal Palace, Jaipur', 'jaimahaljaipur@gmail.com', 'jaimahaljaipur');
 
 -- --------------------------------------------------------
 
@@ -161,11 +164,29 @@ INSERT INTO `user` (`id`, `name`, `email`, `password`) VALUES
 --
 
 --
+-- Indexes for table `contactus`
+--
+ALTER TABLE `contactus`
+  ADD KEY `id` (`id`);
+
+--
+-- Indexes for table `events`
+--
+ALTER TABLE `events`
+  ADD KEY `id` (`id`);
+
+--
 -- Indexes for table `manager`
 --
 ALTER TABLE `manager`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
+
+--
+-- Indexes for table `rooms`
+--
+ALTER TABLE `rooms`
+  ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `spa`
@@ -188,7 +209,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `manager`
 --
 ALTER TABLE `manager`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user`
@@ -199,6 +220,24 @@ ALTER TABLE `user`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `contactus`
+--
+ALTER TABLE `contactus`
+  ADD CONSTRAINT `contactus_ibfk_1` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `events`
+--
+ALTER TABLE `events`
+  ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `rooms`
+--
+ALTER TABLE `rooms`
+  ADD CONSTRAINT `rooms_ibfk_1` FOREIGN KEY (`id`) REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `spa`
